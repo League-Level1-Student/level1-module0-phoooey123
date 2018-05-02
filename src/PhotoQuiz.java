@@ -3,7 +3,6 @@
  *    Level 1
  */
 
-
 import java.awt.Component;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,32 +18,41 @@ public class PhotoQuiz {
 	public static void main(String[] args) throws Exception {
 		JFrame quizWindow = new JFrame();
 		quizWindow.setVisible(true);
-                quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
+		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // This will make sure the program exits when you
+																	// close the window
 
-		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
+		// 1. find an image on the internet, and put its URL in a String variable (from
+		// your browser, right click on the image, and select “Copy Image Address”)
+		String url = "https://img.buzzfeed.com/buzzfeed-static/static/2017-04/25/4/enhanced/buzzfeed-prod-fastlane-01/enhanced-23831-1493109569-1.jpg";
 
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component comp;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		comp = createImage(url);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(comp);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String ans = JOptionPane.showInputDialog("What color is this dog?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if (ans.equals("brown")) {
+			JOptionPane.showMessageDialog(quizWindow, "CORRECT");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
-
-		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
-
+		else {
+			JOptionPane.showMessageDialog(quizWindow, "INCORRECT");
+		}
+		// 9. remove the component from the quiz window (you may not see the effect of
+		// this until step 12)
+		quizWindow.remove(comp);
 		// 10. find another image and create it (might take more than one line of code)
-
+		url = "https://img.buzzfeed.com/buzzfeed-static/static/2017-08/9/11/enhanced/buzzfeed-prod-fastlane-02/enhanced-1731-1502293831-8.jpg?downsize=715:*&output-format=auto&output-quality=auto";
 		// 11. add the second image to the quiz window
-
+		comp = createImage(url);
+		quizWindow.add(comp);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
 
 		// 14+ check answer, say if correct or incorrect, etc.
@@ -60,10 +68,6 @@ public class PhotoQuiz {
 
 	/* OPTIONAL */
 	// *14. add scoring to your quiz
-	// *15. make something happen when mouse enters image (imageComponent.addMouseMotionListener()) 
+	// *15. make something happen when mouse enters image
+	// (imageComponent.addMouseMotionListener())
 }
-
-
-
-
-
