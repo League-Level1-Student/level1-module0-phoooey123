@@ -9,6 +9,7 @@ public class Houses {
 	Robot rob = new Robot();
 	Random rand = new Random();
 	 static String house = new String();
+	 static Color color;
 public static void main(String[] args) {
 	
 	Houses h = new Houses();
@@ -16,7 +17,7 @@ public static void main(String[] args) {
 	
 	for (int i = 0; i < 9; i++) {
 		h.random();
-		h.flat(house);
+		h.flat(house, color);
 	}
 	
 	
@@ -29,12 +30,15 @@ void random() {
 	int r = rand.nextInt(3);
 	if(r == 0) {
 		house = "small";
+		color = color.RED;
 	}
 	else if(r==1) {
 		house = "medium";
+		color = color.BLUE;
 	}
 	else if(r==2) {
 		house = "large";
+		color = color.PINK;
 	}
 }
 void start() {
